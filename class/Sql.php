@@ -9,17 +9,17 @@
             $this->conn = new PDO("sqlsrv:database=dbphp7;server=localhost\SQLEXPRESSSERVER;ConnectionPooling=0","sa","root");
         }
 
-        private function setParams($statment, $parameters = array()){
+        private function setParams($statement, $parameters = array()){
 
             foreach ($parameters as $key => $value){
-                $this->setParam($key, $value);
+                $this->setParam($statement, $key, $value);
             }
 
         }
 
-        private function setParam($statment, $key, $value){
+        private function setParam($statement, $key, $value){
 
-            $statment->bindParam($key, $value);
+            $statement->bindParam($key, $value);
         }
 
         public function query($rawQuery, $params = array()){
