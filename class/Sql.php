@@ -6,7 +6,8 @@
 
         public function __construct()
         {   
-            $this->conn = new PDO("sqlsrv:database=dbphp7;server=localhost\SQLEXPRESSSERVER;ConnectionPooling=0","sa","root");
+            //$this->conn = new PDO("sqlsrv:database=dbphp7;server=localhost\SQLEXPRESSSERVER;ConnectionPooling=0","sa","root");
+            $this->conn = new PDO("mysql:dbname=dbphp7;host=localhost","root","");
         }
 
         private function setParams($statement, $parameters = array()){
